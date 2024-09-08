@@ -1,0 +1,21 @@
+{
+    "text": "Este proyecto fue realizado con el fin de ser presentado a modo de prototipo de como se vería la web / app de nuestro proyecto EACP de fin de nuestra carrera tecnica",
+    "version": "1.0",
+    "team": {
+        "leonel": {
+            "nombre": "Bravo Leonel"
+        },
+        "martin": {
+            "nombre": "Cordoba Martin"
+        },
+        "ayrton": {
+            "nombre": "Esperguin Ayrton"
+        },
+        "juan": {
+            "nombre": "Sanhueza JuanDavid"
+        },
+        "belen": {
+            "nombre": "Gonzalez Belen"
+        }
+    }
+}
