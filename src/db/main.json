@@ -3,6 +3,8 @@
         "dataHora": 124456462345345,
         "temperaturaC": 23,
         "humedadRelativa": 30,
-        "presionAtm": 2000
+        "viento": 20,
+        "alerta": 0,
+        "vientoPredominante": 0
     }
 }

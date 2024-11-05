@@ -1,0 +1,26 @@
+{
+    "green": {
+        "backgroundLM": "#e2fec9",
+        "backgroundDM": "#113003",
+        "color1": "#a0f95d",
+        "color2": "#5dd50d"
+    },
+    "yellow": {
+        "backgroundLM": "#f4fcc5",
+        "backgroundDM":"#402e08",
+        "color1": "#e8f64e",
+        "color2": "#eded12"
+    },
+    "orange": {
+        "backgroundLM":"#fef5d6",
+        "backgroundDM":"#422008",
+        "color1":"#fad377",
+        "color2":"#f49e1b"
+    },
+    "red": {
+        "backgroundLM":"#ffdfdf",
+        "backgroundDM":"#4b0404",
+        "color1":"#ff9d9d",
+        "color2":"#ff3434"
+    }
+}

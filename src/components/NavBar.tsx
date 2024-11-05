@@ -1,17 +1,35 @@
 import { Link } from "react-router-dom";
-import logo from "../../public/images/favicon.svg"
+import logo from "../../public/images/favicon.svg";
+import maindb from "../db/main.json";
 
 function NavBar() {
   const navLinks = [
     { title: "Home", path: "/" },
-    { title: "Este Proyecto", path: "/este-proyecto" },
+    { title: "Informacion", path: "/este-proyecto" },
+    { title: "API", path: "/api" },
   ];
 
+  // Background basado en Alerta
+  let alerta = maindb.horaActual.alerta;
+  let bgColorClass = "";
+  if (alerta === 0) {
+    bgColorClass = "greenNav";
+  } else if (alerta === 1) {
+    bgColorClass = "yellowNav";
+  } else if (alerta === 2) {
+    bgColorClass = "orangeNav";
+  } else if (alerta === 3) {
+    bgColorClass = "redNav";
+  }
+
   return (
-    <ul className="flex text-white geist-regular gap-5 mb-10 bg-[#2c2f33]" id="navBar">
+    <ul
+      className={`flex text-white geist-regular gap-5 mb-10 ${bgColorClass}`}
+      id="navBar"
+    >
       <img
         alt="LogoProyecto"
-        src={logo} // Utiliza la variable importada que contiene la ruta del archivo svg
+        src={logo}
         className="h-8 w-8"
         id="logo"
       />

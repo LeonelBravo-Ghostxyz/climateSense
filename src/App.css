@@ -41,3 +41,43 @@ html {
 .geist-regular {
   font-family: Geist-Regular;
 }
+
+.greenNav {
+  background-color: #5bb61e;
+}
+.greenCont {
+  background-color: #113003;
+}
+.greenCol {
+  background-color: #7ccf3c;
+}
+
+.yellowNav {
+  background-color: #c0c021;
+}
+.yellowCont {
+  background-color: #402e08;
+}
+.yellowCol {
+  background-color: #b1bb3e;
+}
+
+.orangeNav {
+  background-color: #c07d18;
+}
+.orangeCont {
+  background-color: #422008;
+}
+.orangeCol {
+  background-color: #b18e3e;
+}
+
+.redNav {
+  background-color: #b91c1c;
+}
+.redCont {
+  background-color: #4b0404;
+}
+.redCol {
+  background-color: #ff9d9d;
+}

@@ -1,33 +1,50 @@
 import db from '../db/main.json';
 
+import aS from '../assets/arrows/v-s.png'
+import aSE from '../assets/arrows/v-se.png'
+import aSO from '../assets/arrows/v-so.png'
+import aN from '../assets/arrows/v-n.png'
+import aNE from '../assets/arrows/v-ne.png'
+import aNO from '../assets/arrows/v-no.png'
+import aO from '../assets/arrows/v-o.png'
+import aE from '../assets/arrows/v-e.png'
+
 function HomePage() {
-  let status: string[] = [];
   let temperatura: number = db.horaActual.temperaturaC;
   let humedad: number = db.horaActual.humedadRelativa;
-  let presion: number = db.horaActual.presionAtm;
+  let viento: number = db.horaActual.viento;
+  let vientoPredominante: number = db.horaActual.vientoPredominante;
 
-  if (temperatura > 30) {
-    status[0] = 'Caluroso';
-  } else if (temperatura < 30 && temperatura > 20) {
-    status[0] = 'Moderado';
-  } else if (temperatura < 20) {
-    status[0] = 'Frío';
+  let imgUrl = ""
+  switch (vientoPredominante){
+    case 0: imgUrl = aSE;
+    break;
+    case 1: imgUrl = aS;
+    break;
+    case 2: imgUrl = aSO;
+    break;
+    case 3: imgUrl = aO;
+    break;
+    case 4: imgUrl = aNO;
+    break;
+    case 5: imgUrl = aN;
+    break;
+    case 6: imgUrl = aNE;
+    break;
+    case 0: imgUrl = aE;
+    break;
   }
 
-  if (humedad > 70) {
-    status[1] = 'Alta Humedad';
-  } else if (humedad <= 70 && humedad > 40) {
-    status[1] = 'Humedad Moderada';
-  } else {
-    status[1] = 'Baja Humedad';
-  }
-
-  if (presion > 1013) {
-    status[2] = 'Alta Presión';
-  } else if (presion <= 1013 && presion > 1000) {
-    status[2] = 'Presión Normal';
-  } else {
-    status[2] = 'Baja Presión';
+  let alerta = db.horaActual.alerta;
+  let bgColorClass = "";
+  if (alerta === 0) {
+    bgColorClass = "greenCol";
+  } else if (alerta === 1) {
+    bgColorClass = "yellowCol";
+  } else if (alerta === 2) {
+    bgColorClass = "orangeCol";
+  } else if (alerta === 3) {
+    bgColorClass = "redCol";
   }
 
   return (
@@ -36,37 +53,25 @@ function HomePage() {
 
       <p className='flex flex-col gap-5 geist-regular text-white mt-5 text-xl'>Ultima Actualización {formattedTime}</p>
 
-      <div className="grid grid-cols-3 gap-4 text-white border-2 border-white mt-5">
+      <div className={`grid grid-cols-2 gap-4 text-white border-2 border-white mt-5 ${bgColorClass}`}>
         <div>Dato</div>
         <div>Valor</div>
-        <div>Estado</div>
         <div>Temperatura</div>
         <div>{temperatura}°C</div>
-        <div style={{ backgroundColor: statusColor(status[0]) }}>{status[0]}</div>
         <div>Humedad</div>
         <div>{humedad} %</div>
-        <div style={{ backgroundColor: statusColor(status[1]) }}>{status[1]}</div>
-        <div>Presión Atmosférica</div>
-        <div>{presion} milibares</div>
-        <div style={{ backgroundColor: statusColor(status[2]) }}>{status[2]}</div>
+        <div>Viento</div>
+        <div>{viento} km/h</div>
+        <div>Viento predominante</div>
+        <div className='flex justify-center'>
+        <img alt="Brand" src={imgUrl} width={"30px"}/>
+        </div>
       </div>
 
       <div className="flex flex-col gap-5 geist-regular text-white mt-20 text-2xl">Pronostico</div>
     </div>
   );
 }
-
-// Función para determinar el color según el estado
-function statusColor(status: string): string {
-  if (status === 'Baja Humedad' || status === 'Frío' || status === 'Baja Presión') {
-    return 'blue'; // Azul para valores bajos
-  } else if (status === 'Humedad Moderada' || status === 'Moderado' || status === 'Presión Normal') {
-    return 'green'; // Verde para valores moderados
-  } else {
-    return 'red'; // Rojo para valores altos
-  }
-}
-
 
 function formatTime(date: number): string {
   const currentDate = new Date(date);
