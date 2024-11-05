@@ -6,7 +6,6 @@ interface AlertProps {
       dataHora: number;
       temperaturaC: number;
       humedadRelativa: number;
-      presionAtm: number;
       alerta: number;
     };
   };
