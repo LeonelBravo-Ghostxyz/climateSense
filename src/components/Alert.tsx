@@ -3,9 +3,6 @@ import { useState, useEffect } from 'react';
 interface AlertProps {
   data: {
     horaActual: {
-      dataHora: number;
-      temperaturaC: number;
-      humedadRelativa: number;
       alerta: number;
     };
   };
