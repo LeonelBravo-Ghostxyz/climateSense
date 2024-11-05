@@ -2,7 +2,6 @@
   "name": "climatesense",
   "private": false,
   "version": "0.0.2",
-  "homepage": "https://leonelbravo-ghostxyz.github.io/",
   "type": "module",
   "scripts": {
     "dev": "vite",

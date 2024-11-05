@@ -31,7 +31,7 @@ function HomePage() {
     break;
     case 6: imgUrl = aNE;
     break;
-    case 0: imgUrl = aE;
+    case 7: imgUrl = aE;
     break;
   }
 
