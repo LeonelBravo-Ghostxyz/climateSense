@@ -5,6 +5,8 @@ let equipo = db.team;
 
 function ProjectPage() {
   return (
+    <>
+    <img src="public\images\brand.png" alt="brand" className='m-auto mt-3'/>
     <div className="flex flex-col gap-5 geist-regular text-white">
       <p className="text-2xl mt-10">Este Proyecto</p>
       <p>{proyecto}</p>
@@ -16,6 +18,7 @@ function ProjectPage() {
         ))}
       </div>
     </div>
+    </>
   );
 }
 
